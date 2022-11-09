@@ -18,9 +18,9 @@
                 <td>{{ post.title }}</td>
                 <td>{{ post.body }}</td>
                 <td>
-                    <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info">View</a>
-                    <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary">Edit</a>
-                    <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">Delete</button>
+                    <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info btn-default">View</a>
+                    <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary btn-default">Edit</a>
+                    <button type="button" (click)="deletePost(post.id)" class="btn btn-danger btn-custom">Delete</button>
                 </td>
             </tr>
         </tbody>
