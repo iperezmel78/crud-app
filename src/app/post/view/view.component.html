@@ -5,17 +5,17 @@
 
     <div>
         <strong>ID:</strong>
-        <p>{{ post.id }}</p>
+        <p>{{ post ? post.id : "" }}</p>
     </div>
 
     <div>
         <strong>Title:</strong>
-        <p>{{ post.title }}</p>
+        <p>{{ post ? post.title : "" }}</p>
     </div>
 
     <div>
         <strong>Body:</strong>
-        <p>{{ post.body }}</p>
+        <p>{{ post ? post.body : "" }}</p>
     </div>
 
 </div>

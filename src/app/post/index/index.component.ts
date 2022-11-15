@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { Post } from '../post';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-index',
@@ -21,7 +22,6 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
     this.postService.getAll().subscribe((data: Post[]) => {
       this.posts = data;
-      console.log(this.posts);
     });
   }
 
@@ -33,7 +33,6 @@ export class IndexComponent implements OnInit {
   deletePost(id: number) {
     this.postService.delete(id).subscribe(res => {
       this.posts = this.posts.filter(item => item.id !== id);
-      console.log('Post deleted successfully!');
     });
   }
 
