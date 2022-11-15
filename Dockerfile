@@ -20,3 +20,5 @@ EXPOSE 8081
 RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
 
 COPY --from=builder /app/dist/crud-app /usr/share/nginx/html
+
+CMD ["nginx", "-g", "daemon off;"]
