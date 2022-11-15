@@ -8,4 +8,4 @@ RUN npm run $BUILD
 
 # Stage 2
 FROM docker.io/library/nginx:1.23.2-alpine
-COPY --from=builder /app/dist/angular-app /usr/share/nginx/html
+COPY --from=builder /app/dist/crud-app /usr/share/nginx/html
