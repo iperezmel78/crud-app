@@ -1,5 +1,5 @@
 # Stage 1
-FROM docker.io/library/node:19.1.0 as builder
+FROM docker.io/library/node:19.1-alpine as builder
 ARG BUILD
 WORKDIR /app
 COPY . .
