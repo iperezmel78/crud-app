@@ -3,7 +3,8 @@ FROM docker.io/library/node:19.1-alpine3.16 as builder
 ARG BUILD
 WORKDIR /app
 COPY . .
-RUN npm ci && npm run $BUILD && \
+RUN npm ci && \
+  npm run $BUILD && \
   npm prune --production
 
 # Stage 2
