@@ -1,12 +1,12 @@
 # Stage 1
 FROM docker.io/library/node:19.1-alpine3.16 as builder
 ARG BUILD
-ENV NODE_ENV production
 WORKDIR /app
 COPY . .
 RUN npm i && \
   npm cache clean --force && \
-  npm run $BUILD
+  npm run $BUILD && \
+  npm prune --production
 
 # Stage 2
 FROM docker.io/library/nginx:1.23.2-alpine
