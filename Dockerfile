@@ -5,8 +5,8 @@ ENV NODE_OPTIONS="--max_old_space_size=4096" NODE_ENV="production"
 WORKDIR /app
 COPY . .
 RUN npm i && \
-  npm cache clean --force && \
-  npm run $BUILD
+  npm run $BUILD && \
+  npm cache clean --force
 
 # Stage 2
 FROM docker.io/library/nginx:1.23.2-alpine
