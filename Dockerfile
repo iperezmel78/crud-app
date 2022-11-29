@@ -3,8 +3,8 @@ FROM docker.io/library/node:19.1-alpine3.16 as builder
 ARG BUILD
 WORKDIR /app
 COPY . .
-RUN npm i && \
-  npm cache clean --force && \
+RUN npm cache clean --force && \
+  npm i && \
   npm run $BUILD && \
   npm prune --production
 
