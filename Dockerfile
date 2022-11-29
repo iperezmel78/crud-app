@@ -1,12 +1,12 @@
 # Stage 1
 FROM docker.io/library/node:19.1-alpine3.16 as builder
 ARG BUILD
-ENV NODE_OPTIONS="--max_old_space_size=4096" NODE_ENV="production"
+ENV NODE_ENV production
 WORKDIR /app
 COPY . .
 RUN npm i && \
-  npm run $BUILD && \
-  npm cache clean --force
+  npm cache clean --force && \
+  npm run $BUILD
 
 # Stage 2
 FROM docker.io/library/nginx:1.23.2-alpine
